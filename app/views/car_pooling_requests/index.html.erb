@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Car Pooling Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Password</th>
+      <th>User</th>
+      <th>Travel</th>
+      <th>Prefer from</th>
+      <th>Prefer to</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @car_pooling_requests.each do |car_pooling_request| %>
+      <tr>
+        <td><%= car_pooling_request.email %></td>
+        <td><%= car_pooling_request.password %></td>
+        <td><%= car_pooling_request.user_id %></td>
+        <td><%= car_pooling_request.travel_id %></td>
+        <td><%= car_pooling_request.prefer_from %></td>
+        <td><%= car_pooling_request.prefer_to %></td>
+        <td><%= link_to 'Show', car_pooling_request %></td>
+        <td><%= link_to 'Edit', edit_car_pooling_request_path(car_pooling_request) %></td>
+        <td><%= link_to 'Destroy', car_pooling_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Car pooling request', new_car_pooling_request_path %>
